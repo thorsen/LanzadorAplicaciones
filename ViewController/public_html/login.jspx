@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+      <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+      <f:view>
+            <f:loadBundle basename="es.ramondin.lanzadoraplicaciones.view.resources.Idioma" var="res"/>
+            <af:document id="d1" title="#{res.PaginaLogin}">
+                  <af:messages id="m1"/>
+                  <af:form id="f1" defaultCommand="cb1">
+                        <af:panelGroupLayout id="pgl0" layout="vertical" halign="center">
+                              <af:panelGroupLayout id="pgl1" layout="vertical"
+                                                   inlineStyle="background-image:url(imagenes/fondo_1280_v12.png); background-repeat:no-repeat; width:1280px; height:666.0px;">
+                                    <af:spacer width="10" height="30" id="s1"/>
+                                    <af:panelGroupLayout id="pgl2" layout="horizontal">
+                                          <af:panelFormLayout id="pfl1">
+                                                <af:inputText label="#{res.Usuario}" value="#{backingBeanScope.LoginBean.usuario}" id="it1" required="true"/>
+                                                <af:inputText label="#{res.Password}" value="#{backingBeanScope.LoginBean.password}" secret="true" id="it2"
+                                                              required="true"/>
+                                                <af:commandButton text="#{res.Entrar}" id="cb1" action="#{backingBeanScope.LoginBean.doLogin}" partialSubmit="true"/>
+                                          </af:panelFormLayout>
+                                    </af:panelGroupLayout>
+                                    <af:spacer width="10" height="10" id="s3"/>
+                              </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                  </af:form>
+            </af:document>
+      </f:view>
+      <!--oracle-jdev-comment:preferred-managed-bean-name:LoginBean-->
+</jsp:root>

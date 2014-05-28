@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.64.93" id="mainPageDef" Package="es.ramondin.lanzadoraplicaciones.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <taskFlow id="dynamicRegion1" taskFlowId="${pageFlowScope.DynamicRegionsBean.dynamicTaskFlowId}" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings>
+    <methodAction id="getMenuCompleto" RequiresUpdateModel="true" Action="invokeMethod" MethodName="getMenuCompleto" IsViewObjectMethod="true"
+                  DataControl="LanzadorAplicacionesAMDataControl" InstanceName="LanzadorAplicacionesAMDataControl.TSegGAFCategorias"
+                  ReturnName="data.LanzadorAplicacionesAMDataControl.methodResults.getMenuCompleto_LanzadorAplicacionesAMDataControl_TSegGAFCategorias_getMenuCompleto_result">
+      <NamedData NDName="idGrupo" NDType="java.lang.Integer"/>
+      <NamedData NDName="idioma" NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

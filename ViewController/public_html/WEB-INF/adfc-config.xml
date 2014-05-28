@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <managed-bean id="__1">
+    <managed-bean-name id="__4">DynamicRegionsBean</managed-bean-name>
+    <managed-bean-class id="__3">es.ramondin.lanzadoraplicaciones.view.beans.DynamicRegionsBean</managed-bean-class>
+    <managed-bean-scope id="__2">pageFlow</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__8">
+    <managed-bean-name id="__6">LoginBean</managed-bean-name>
+    <managed-bean-class id="__5">es.ramondin.lanzadoraplicaciones.view.beans.LoginBean</managed-bean-class>
+    <managed-bean-scope id="__7">backingBean</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

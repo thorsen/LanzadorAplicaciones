@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1" title="Lanzador de Aplicaciones">
+      <af:messages id="m2"/>
+      <af:form id="f1">
+        <af:panelSplitter id="ps1">
+          <f:facet name="first">
+            <af:panelStretchLayout id="psl1" topHeight="75px">
+              <f:facet name="top">
+                <af:panelGroupLayout id="pgl1" layout="vertical">
+                  <af:image source="/imagenes/LOGOTIPO_RMD_TRANSPA.png" shortDesc="LOGO" inlineStyle="width:150px;" id="i1"/>
+                  <af:separator id="s1"/>
+                  <af:panelLabelAndMessage label="Usuario: " id="plam1" inlineStyle="font-weight:bold;">
+                    <af:outputText id="ot1" value="#{sessionScope.nombreUsuario}"/>
+                  </af:panelLabelAndMessage>
+                </af:panelGroupLayout>
+              </f:facet>
+              <f:facet name="center">
+                <af:panelAccordion id="pa1" binding="#{pageFlowScope.DynamicRegionsBean.menuPA}"/>
+              </f:facet>
+            </af:panelStretchLayout>
+          </f:facet>
+          <f:facet name="second">
+            <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1"/>
+          </f:facet>
+        </af:panelSplitter>
+        <af:popup id="p1" binding="#{pageFlowScope.DynamicRegionsBean._popup}">
+          <af:dialog id="d2" type="none" title="Warning: Pending Changes">
+            <af:panelGroupLayout id="pgl3" layout="vertical">
+              <af:outputText value="Warning: There are pending changes! Do you want to continue without saving changes?" id="ot2"/>
+              <af:spacer width="10" height="50" id="s3"/>
+              <af:panelGroupLayout id="pgl4" layout="horizontal" halign="center">
+                <af:commandButton text="Continue" id="cb1" actionListener="#{pageFlowScope.DynamicRegionsBean.continueAction}"/>
+                <af:spacer width="10" height="10" id="s4"/>
+                <af:commandButton text="Cancel" id="cb2"/>
+              </af:panelGroupLayout>
+            </af:panelGroupLayout>
+          </af:dialog>
+        </af:popup>
+      </af:form>
+      <af:resource type="javascript">
+        function expandDiscloseNode(event) {
+            var _tree = event.getSource();
+            rwKeySet = _tree.getSelectedRowKeys();
+            var firstRowKey;
+            for (rowKey in rwKeySet) {
+                firstRowKey = rowKey;
+                break;
+            }
+            if (_tree.isPathExpanded(firstRowKey)) {
+                _tree.setDisclosedRowKey(firstRowKey, false);
+            }
+            else {
+                _tree.setDisclosedRowKey(firstRowKey, true);
+            }
+        }
+      </af:resource>
+    </af:document>
+  </f:view>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:DynamicRegionsBean-->
+</jsp:root>

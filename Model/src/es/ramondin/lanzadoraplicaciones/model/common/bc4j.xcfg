@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="es.ramondin.lanzadoraplicaciones.model.LanzadorAplicacionesAM">
+      <AppModuleConfig DeployPlatform="LOCAL" JDBCName="real_axp_jdbc" jbo.project="es.ramondin.lanzadoraplicaciones.model.Model" name="LanzadorAplicacionesAMLocal" ApplicationName="es.ramondin.lanzadoraplicaciones.model.LanzadorAplicacionesAM">
+         <Database jbo.sql92.JdbcDriverClass="com.Connx.jdbc.TCJdbc.TCJdbcDriver" jbo.TypeMapEntries="Java" jbo.SQLBuilder="SQL92"/>
+         <Security AppModuleJndiName="es.ramondin.lanzadoraplicaciones.model.LanzadorAplicacionesAM"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="LanzadorAplicacionesAMShared" ApplicationName="es.ramondin.lanzadoraplicaciones.model.LanzadorAplicacionesAM" DeployPlatform="LOCAL" jbo.project="es.ramondin.lanzadoraplicaciones.model.Model">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Database jbo.sql92.JdbcDriverClass="com.Connx.jdbc.TCJdbc.TCJdbcDriver" jbo.TypeMapEntries="Java" jbo.SQLBuilder="SQL92"/>
+         <Security AppModuleJndiName="es.ramondin.lanzadoraplicaciones.model.LanzadorAplicacionesAM"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/real_axp_jdbcDS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

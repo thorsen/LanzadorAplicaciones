@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+<JboProject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Model"
+  Version="11.1.1.64.93"
+  SeparateXMLFiles="true"
+  PackageName="es.ramondin.lanzadoraplicaciones.model">
+  <DesignTime>
+    <Attr Name="_jprName" Value="../../../../../Model.jpr"/>
+    <Attr Name="_jbo.SQLBuilder" Value="SQL92"/>
+    <Attr Name="_jbo.TypeMapEntries" Value="Java"/>
+    <Attr Name="_NamedConnection" Value="real_axp_jdbc"/>
+    <Attr Name="_appModuleNames0" Value="es.ramondin.lanzadoraplicaciones.model.LanzadorAplicacionesAM"/>
+  </DesignTime>
+  <Containee
+    Name="model"
+    PackageName="es.ramondin.lanzadoraplicaciones.model"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="viewlinks"
+    PackageName="es.ramondin.lanzadoraplicaciones.model.viewlinks"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VL" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="views"
+    PackageName="es.ramondin.lanzadoraplicaciones.model.views"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <AppContainee
+    Name="DM"
+    FullName="es.ramondin.modelo.DM"
+    ObjectType="JboProject">
+    <DesignTime>
+      <Attr Name="_SourceName" Value="ModelBase.jar"/>
+    </DesignTime>
+  </AppContainee>
+  <AppContainee
+    Name="DM"
+    ObjectType="JboProject">
+    <DesignTime>
+      <Attr Name="_SourceName" Value="ModelBase.jar"/>
+    </DesignTime>
+  </AppContainee>
+  <AppContainee
+    Name="DM"
+    ObjectType="JboProject">
+    <DesignTime>
+      <Attr Name="_SourceName" Value="ModelBase.jar"/>
+    </DesignTime>
+  </AppContainee>
+  <AppContainee
+    Name="DM"
+    ObjectType="JboProject">
+    <DesignTime>
+      <Attr Name="_SourceName" Value="ModelBase.jar"/>
+    </DesignTime>
+  </AppContainee>
+  <AppContainee
+    Name="DM"
+    ObjectType="JboProject">
+    <DesignTime>
+      <Attr Name="_SourceName" Value="ModelBase.jar"/>
+    </DesignTime>
+  </AppContainee>
+  <AppContainee
+    Name="DM"
+    ObjectType="JboProject">
+    <DesignTime>
+      <Attr Name="_SourceName" Value="ModelBase.jar"/>
+    </DesignTime>
+  </AppContainee>
+</JboProject>

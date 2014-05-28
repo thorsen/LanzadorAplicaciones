@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core">
+  <f:loadBundle basename="es.ramondin.lanzadoraplicaciones.view.resources.Idioma" var="res"/>
+  <af:panelHeader text="#{res.SistemaInformaticoRamondinCapsulas}" id="ph1" styleClass="AFStretchWidth">
+    <af:panelGroupLayout id="pgl1" layout="vertical" halign="center">
+      <af:image id="i1" shortDesc="Imagen Fondo" source="#{sessionScope.rutaServidor}/generales/RAMONDIN_DIA_WEB.jpg"/>
+    </af:panelGroupLayout>
+  </af:panelHeader>
+</jsp:root>

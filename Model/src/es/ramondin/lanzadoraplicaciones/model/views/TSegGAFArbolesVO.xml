@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TSegGAFArbolesVO"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  OrderBy="ID_AREA, ORDEN, ID_FUNCION"
+  BindingStyle="JDBC"
+  CustomQuery="true"
+  FetchMode="FETCH_AS_NEEDED"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="es.ramondin.lanzadoraplicaciones.model.views.TSegGAFArbolesVORowImpl">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="es.ramondin.lanzadoraplicaciones.model.views.TSegGAFArbolesVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <SQLQuery>
+    <![CDATA[SELECT TSEGGRUPO_AREA_FUNCION.ID_AREA, ORDEN, ID_GRUPO, IDIOMA, TSEGGRUPO_AREA_FUNCION.ID_FUNCION, TSEGGRUPO_AREA_FUNCION.ID_FUNCION_PADRE, TSEGDENOM_FUNCION.DENOM_FUNCION, URL, VERSION, NOMBRE_TASK_FLOW, NOMBRE_AM
+FROM TSEGGRUPO_AREA_FUNCION
+LEFT JOIN TSEGAREA_FUNCION
+ON TSEGGRUPO_AREA_FUNCION.ID_AREA = TSEGAREA_FUNCION.ID_AREA
+AND TSEGGRUPO_AREA_FUNCION.ID_FUNCION_PADRE = TSEGAREA_FUNCION.ID_FUNCION_PADRE
+AND TSEGGRUPO_AREA_FUNCION.ID_FUNCION = TSEGAREA_FUNCION.ID_FUNCION
+LEFT JOIN TSEGDENOM_FUNCION
+ON TSEGGRUPO_AREA_FUNCION.ID_FUNCION = TSEGDENOM_FUNCION.ID_FUNCION
+LEFT JOIN TSEGFUNCION
+ON TSEGGRUPO_AREA_FUNCION.ID_FUNCION = TSEGFUNCION.ID_FUNCION
+WHERE TSEGGRUPO_AREA_FUNCION.ID_FUNCION_PADRE IS NOT NULL]]>
+  </SQLQuery>
+  <ViewAttribute
+    Name="IdArea"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="7"
+    Scale="0"
+    Type="java.lang.Integer"
+    ColumnType="I"
+    AliasName="ID_AREA"
+    Expression="ID_AREA"
+    SQLType="INTEGER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="9"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Orden"
+    IsUpdateable="false"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="7"
+    Scale="0"
+    Type="java.lang.Integer"
+    ColumnType="O"
+    AliasName="ORDEN"
+    Expression="ORDEN"
+    SQLType="INTEGER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="9"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="IdGrupo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="7"
+    Scale="0"
+    Type="java.lang.Integer"
+    ColumnType="I"
+    AliasName="ID_GRUPO"
+    Expression="ID_GRUPO"
+    SQLType="INTEGER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="9"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idioma"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="2"
+    Type="java.lang.String"
+    ColumnType="I"
+    AliasName="IDIOMA"
+    Expression="IDIOMA"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="IdFuncion"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Integer"
+    ColumnType="BIGINT"
+    AliasName="ID_FUNCION"
+    Expression="ID_FUNCION"
+    SQLType="INTEGER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="9"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="IdFuncionPadre"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="7"
+    Scale="0"
+    Type="java.lang.Integer"
+    ColumnType="I"
+    AliasName="ID_FUNCION_PADRE"
+    Expression="ID_FUNCION_PADRE"
+    SQLType="INTEGER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="9"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DenomFuncion"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="500"
+    Type="java.lang.String"
+    ColumnType="D"
+    AliasName="DENOM_FUNCION"
+    Expression="DENOM_FUNCION"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Url"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1000"
+    Type="java.lang.String"
+    ColumnType="U"
+    AliasName="URL"
+    Expression="URL"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1000"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Version"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="3"
+    Type="java.lang.String"
+    ColumnType="V"
+    AliasName="VERSION"
+    Expression="VERSION"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="NombreTaskFlow"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="N"
+    AliasName="NOMBRE_TASK_FLOW"
+    Expression="NOMBRE_TASK_FLOW"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="NombreAm"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="N"
+    AliasName="NOMBRE_AM"
+    Expression="NOMBRE_AM"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="IdFuncion"/>
+  </AttrArray>
+  <ViewLinkAccessor
+    Name="IdFuncionTSegGAFArboles"
+    ViewLink="es.ramondin.lanzadoraplicaciones.model.viewlinks.ArbolesFuncionesVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="es.ramondin.lanzadoraplicaciones.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

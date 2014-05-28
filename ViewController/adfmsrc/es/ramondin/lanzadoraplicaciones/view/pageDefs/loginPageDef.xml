@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.64.93" id="loginPageDef" Package="es.ramondin.lanzadoraplicaciones.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TSegSesiones" RangeSize="25" DataControl="LanzadorAplicacionesAMDataControl" id="TSegSesionesIterator"/>
+  </executables>
+  <bindings>
+    <action id="Commit" DataControl="LanzadorAplicacionesAMDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <methodAction IterBinding="TSegSesionesIterator" id="actualizaTablaSesiones" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="actualizaTablaSesiones" IsViewObjectMethod="true" DataControl="LanzadorAplicacionesAMDataControl"
+                  InstanceName="LanzadorAplicacionesAMDataControl.TSegSesiones">
+      <NamedData NDName="crearRegistro" NDType="java.lang.Boolean"/>
+      <NamedData NDName="idSesion" NDType="java.lang.String"/>
+      <NamedData NDName="idUsuario" NDType="java.math.BigDecimal"/>
+      <NamedData NDName="codUsuario" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction IterBinding="TSegSesionesIterator" id="existeIdSesion" RequiresUpdateModel="true" Action="invokeMethod" MethodName="existeIdSesion"
+                  IsViewObjectMethod="true" DataControl="LanzadorAplicacionesAMDataControl" InstanceName="LanzadorAplicacionesAMDataControl.TSegSesiones"
+                  ReturnName="data.LanzadorAplicacionesAMDataControl.methodResults.existeIdSesion_LanzadorAplicacionesAMDataControl_TSegSesiones_existeIdSesion_result">
+      <NamedData NDName="idSesion" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="getIdGrupo" RequiresUpdateModel="true" Action="invokeMethod" MethodName="getIdGrupo" IsViewObjectMethod="true"
+                  DataControl="LanzadorAplicacionesAMDataControl" InstanceName="LanzadorAplicacionesAMDataControl.TSegUsuario"
+                  ReturnName="data.LanzadorAplicacionesAMDataControl.methodResults.getIdGrupo_LanzadorAplicacionesAMDataControl_TSegUsuario_getIdGrupo_result">
+      <NamedData NDName="codUsuario" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="getIdUsuario" RequiresUpdateModel="true" Action="invokeMethod" MethodName="getIdUsuario" IsViewObjectMethod="true"
+                  DataControl="LanzadorAplicacionesAMDataControl" InstanceName="LanzadorAplicacionesAMDataControl.TSegUsuario"
+                  ReturnName="data.LanzadorAplicacionesAMDataControl.methodResults.getIdUsuario_LanzadorAplicacionesAMDataControl_TSegUsuario_getIdUsuario_result">
+      <NamedData NDName="codUsuario" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="getNombreUsuario" RequiresUpdateModel="true" Action="invokeMethod" MethodName="getNombreUsuario" IsViewObjectMethod="true"
+                  DataControl="LanzadorAplicacionesAMDataControl" InstanceName="LanzadorAplicacionesAMDataControl.TSegUsuario"
+                  ReturnName="data.LanzadorAplicacionesAMDataControl.methodResults.getNombreUsuario_LanzadorAplicacionesAMDataControl_TSegUsuario_getNombreUsuario_result">
+      <NamedData NDName="codUsuario" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="getValorParametro" RequiresUpdateModel="true" Action="invokeMethod" MethodName="getValorParametro" IsViewObjectMethod="true"
+                  DataControl="LanzadorAplicacionesAMDataControl" InstanceName="LanzadorAplicacionesAMDataControl.TParametros"
+                  ReturnName="data.LanzadorAplicacionesAMDataControl.methodResults.getValorParametro_LanzadorAplicacionesAMDataControl_TParametros_getValorParametro_result">
+      <NamedData NDName="parametro" NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>
